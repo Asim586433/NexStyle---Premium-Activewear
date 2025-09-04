@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexStyle - Premium Activewear</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #3a86ff;
+            --secondary: #ff006e;
+            --accent: #8338ec;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fefefe;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d1005c;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background-color: #6a2fc9;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .header-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .header-icons a {
+            color: var(--dark);
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .header-icons a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        /* Featured Products */
+        .featured-products {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .product-image {
+            height: 200px;
+            width: 100%;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .product-price .original {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-right: 8px;
+        }
+        
+        .product-rating {
+            color: var(--warning);
+            margin-bottom: 15px;
+        }
+        
+        /* Promotional Section */
+        .promotional {
+            padding: 80px 0;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            text-align: center;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .countdown-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 80px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+            text-transform: uppercase;
+        }
+        
+        /* Listicle Section */
+        .listicle {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .listicle-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .listicle-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .listicle-image img {
+            width: 100%;
+            display: block;
+        }
+        
+        .listicle-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .listicle-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .listicle-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-right: 15px;
+            line-height: 1;
+        }
+        
+        .listicle-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            margin-right: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .author-details {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .author-title {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            padding: 60px 0;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            margin-bottom: 20px;
+        }
+        
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            padding: 12px 20px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .listicle-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .header-icons {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .countdown {
+                flex-wrap: wrap;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form button {
+                border-radius: 4px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Nex<span>Style</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Elevate Your Active Lifestyle</h1>
+            <p>Discover premium activewear designed for performance and style. Experience the perfect blend of comfort and functionality.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn">Shop Collection</a>
+                <a href="#" class="btn btn-secondary">New Arrivals</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300?text=Performance+Leggings" alt="Performance Leggings">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Performance High-Waist Leggings</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(128)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="original">$89.99</span>
+                            $74.99
+                        </div>
+                        <a href="#" class="btn btn-accent">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300?text=Sports+Bra" alt="Sports Bra">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ultimate Support Sports Bra</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(96)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="original">$64.99</span>
+                            $54.99
+                        </div>
+                        <a href="#" class="btn btn-accent">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300?text=Running+Jacket" alt="Running Jacket">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Lightweight Running Jacket</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(75)</span>
+                        </div>
+                        <div class="product-price">$99.99</div>
+                        <a href="#" class="btn btn-accent">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300?text=Yoga+Set" alt="Yoga Set">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Premium Yoga Set</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(142)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="original">$129.99</span>
+                            $109.99
+                        </div>
+                        <a href="#" class="btn btn-accent">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Section -->
+    <section class="promotional">
+        <div class="container">
+            <h2 class="section-title">Summer Sale</h2>
+            <p>Up to 40% off on selected items. Hurry, offer ends soon!</p>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number">2</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">12</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">45</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">18</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            
+            <a href="#" class="btn btn-secondary">Shop the Sale</a>
+        </div>
+    </section>
+
+    <!-- Listicle Section -->
+    <section class="listicle">
+        <div class="container">
+            <h2 class="section-title">Top 5 Reasons to Choose NexStyle</h2>
+            <div class="listicle-container">
+                <div class="listicle-image">
+                    <img src="https://via.placeholder.com/600x500?text=Quality+Activewear" alt="Quality Activewear">
+                </div>
+                <div class="listicle-content">
+                    <div class="listicle-item">
+                        <div class="listicle-number">1</div>
+                        <div class="listicle-text">
+                            <h4>Premium Quality Materials</h4>
+                            <p>Our fabrics are specially engineered for maximum comfort, durability, and performance.</p>
+                        </div>
+                    </div>
+                    <div class="listicle-item">
+                        <div class="listicle-number">2</div>
+                        <div class="listicle-text">
+                            <h4>Sustainable Manufacturing</h4>
+                            <p>We're committed to eco-friendly production processes and sustainable material sourcing.</p>
+                        </div>
+                    </div>
+                    <div class="listicle-item">
+                        <div class="listicle-number">3</div>
+                        <div class="listicle-text">
+                            <h4>Perfect Fit Guarantee</h4>
+                            <p>Not satisfied with the fit? We offer free returns and exchanges within 30 days.</p>
+                        </div>
+                    </div>
+                    <div class="listicle-item">
+                        <div class="listicle-number">4</div>
+                        <div class="listicle-text">
+                            <h4>Designed for Performance</h4>
+                            <p>Each garment is designed with input from professional athletes and fitness experts.</p>
+                        </div>
+                    </div>
+                    <div class="listicle-item">
+                        <div class="listicle-number">5</div>
+                        <div class="listicle-text">
+                            <h4>Style That Transitions</h4>
+                            <p>From studio to street, our pieces are designed to look as good in everyday life as they do during workouts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"These are hands down the best leggings I've ever owned. The fabric is so comfortable and they stay in place during even the most intense workouts."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-details">
+                            <div class="author-name">Sarah Johnson</div>
+                            <div class="author-title">Professional Yoga Instructor</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The quality is exceptional. I've had my NexStyle gear for over a year now with regular use, and it still looks brand new. Worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-details">
+                            <div class="author-name">Michael Torres</div>
+                            <div class="author-title">Fitness Coach</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I absolutely love the designs! Finally, activewear that is both functional and fashionable. I get compliments every time I wear NexStyle."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-details">
+                            <div class="author-name">Jessica Williams</div>
+                            <div class="author-title">Marathon Runner</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join the NexStyle Community</h2>
+            <p>Subscribe to our newsletter for exclusive offers, new product alerts, and fitness tips.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#">Women's Collection</a></li>
+                        <li><a href="#">Men's Collection</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Order Status</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p>Follow us on social media for updates, inspiration, and community highlights.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 NexStyle Activewear. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple countdown timer
+        function updateCountdown() {
+            const days = document.querySelector('.countdown-item:nth-child(1) .countdown-number');
+            const hours = document.querySelector('.countdown-item:nth-child(2) .countdown-number');
+            const minutes = document.querySelector('.countdown-item:nth-child(3) .countdown-number');
+            const seconds = document.querySelector('.countdown-item:nth-child(4) .countdown-number');
+            
+            let sec = parseInt(seconds.innerText);
+            let min = parseInt(minutes.innerText);
+            let hr = parseInt(hours.innerText);
+            let d = parseInt(days.innerText);
+            
+            sec--;
+            
+            if (sec < 0) {
+                sec = 59;
+                min--;
+                
+                if (min < 0) {
+                    min = 59;
+                    hr--;
+                    
+                    if (hr < 0) {
+                        hr = 23;
+                        d--;
+                        
+                        if (d < 0) {
+                            d = 0;
+                            hr = 0;
+                            min = 0;
+                            sec = 0;
+                        }
+                    }
+                }
+            }
+            
+            seconds.innerText = sec.toString().padStart(2, '0');
+            minutes.innerText = min.toString().padStart(2, '0');
+            hours.innerText = hr.toString().padStart(2, '0');
+            days.innerText = d.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        
+        // Add to cart animation
+        const addToCartButtons = document.querySelectorAll('.btn-accent');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const originalText = this.innerText;
+                this.innerText = 'Added to Cart!';
+                this.style.backgroundColor = '#2ecc71';
+                
+                setTimeout(() => {
+                    this.innerText = originalText;
+                    this.style.backgroundColor = '';
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
