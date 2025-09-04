@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexStyle - Premium Activewear</title>
+    <title>FashionHub - Premium Clothing Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
         :root {
             --primary: #3a86ff;
             --secondary: #ff006e;
@@ -19,17 +26,10 @@
             --light-gray: #e9ecef;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
         body {
+            background-color: #f8f9fa;
             color: var(--dark);
             line-height: 1.6;
-            background-color: #fefefe;
         }
         
         .container {
@@ -39,83 +39,35 @@
             padding: 0 15px;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: #2563eb;
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary);
-        }
-        
-        .btn-secondary:hover {
-            background-color: #d1005c;
-        }
-        
-        .btn-accent {
-            background-color: var(--accent);
-        }
-        
-        .btn-accent:hover {
-            background-color: #6a2fc9;
-        }
-        
-        .section-title {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 2.5rem;
-            color: var(--dark);
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            margin: 10px auto;
-            border-radius: 2px;
-        }
-        
         /* Header Styles */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: 28px;
             font-weight: 700;
-            color: var(--primary);
+            color: white;
             text-decoration: none;
+            display: flex;
+            align-items: center;
         }
         
-        .logo span {
-            color: var(--secondary);
+        .logo i {
+            margin-right: 10px;
+            color: #ffd166;
         }
         
         nav ul {
@@ -129,35 +81,55 @@
         
         nav ul li a {
             text-decoration: none;
-            color: var(--dark);
+            color: white;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
         }
         
-        nav ul li a:hover {
-            color: var(--primary);
+        nav ul li a:hover, nav ul li a.active {
+            background: rgba(255, 255, 255, 0.2);
         }
         
         .header-icons {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
         
         .header-icons a {
-            color: var(--dark);
-            font-size: 1.2rem;
-            transition: color 0.3s;
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s;
+            position: relative;
         }
         
         .header-icons a:hover {
-            color: var(--primary);
+            color: #ffd166;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--secondary);
+            color: white;
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
         }
         
@@ -167,56 +139,119 @@
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 48px;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 20px;
             margin-bottom: 30px;
             opacity: 0.9;
         }
         
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         
-        /* Featured Products */
-        .featured-products {
+        .btn:hover {
+            background-color: #2563eb;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d1005c;
+        }
+        
+        /* Products Section */
+        .products {
             padding: 80px 0;
-            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto;
+            border-radius: 2px;
         }
         
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
         
         .product-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
         }
         
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 2;
         }
         
         .product-image {
-            height: 200px;
+            height: 250px;
             width: 100%;
-            background-color: #f5f5f5;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            background: #f5f5f5;
         }
         
         .product-image img {
@@ -227,7 +262,7 @@
         }
         
         .product-card:hover .product-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         
         .product-info {
@@ -235,214 +270,124 @@
         }
         
         .product-title {
-            font-size: 1.1rem;
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            color: var(--dark);
         }
         
         .product-price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
+            display: flex;
+            align-items: center;
             margin-bottom: 15px;
         }
         
-        .product-price .original {
+        .current-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .original-price {
             text-decoration: line-through;
             color: var(--gray);
-            font-size: 0.9rem;
-            margin-right: 8px;
+            font-size: 16px;
+            margin-left: 10px;
         }
         
         .product-rating {
             color: var(--warning);
             margin-bottom: 15px;
-        }
-        
-        /* Promotional Section */
-        .promotional {
-            padding: 80px 0;
-            background: linear-gradient(to right, #ffecd2, #fcb69f);
-            text-align: center;
-        }
-        
-        .countdown {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
+            align-items: center;
         }
         
-        .countdown-item {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            min-width: 80px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .countdown-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-        
-        .countdown-label {
-            font-size: 0.8rem;
+        .product-rating span {
             color: var(--gray);
-            text-transform: uppercase;
+            margin-left: 5px;
+            font-size: 14px;
         }
         
-        /* Listicle Section */
-        .listicle {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .listicle-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .listicle-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .listicle-image img {
-            width: 100%;
-            display: block;
-        }
-        
-        .listicle-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .listicle-item {
+        .product-actions {
             display: flex;
-            margin-bottom: 20px;
-            align-items: flex-start;
+            gap: 10px;
         }
         
-        .listicle-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-right: 15px;
-            line-height: 1;
-        }
-        
-        .listicle-text h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--light-gray);
-            margin-right: 15px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .author-details {
+        .product-actions button {
             flex: 1;
-        }
-        
-        .author-name {
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        
-        .author-title {
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-        
-        /* Newsletter */
-        .newsletter {
-            padding: 60px 0;
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-        }
-        
-        .newsletter h2 {
-            margin-bottom: 20px;
-        }
-        
-        .newsletter p {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-        
-        .newsletter-form {
-            display: flex;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 15px;
+            padding: 10px;
             border: none;
-            border-radius: 4px 0 0 4px;
-            font-size: 1rem;
-        }
-        
-        .newsletter-form button {
-            padding: 12px 20px;
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 0 4px 4px 0;
+            border-radius: 5px;
             cursor: pointer;
             font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .add-to-cart {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .add-to-cart:hover {
+            background: #2563eb;
+        }
+        
+        .view-details {
+            background: var(--light-gray);
+            color: var(--dark);
+        }
+        
+        .view-details:hover {
+            background: #dee2e6;
+        }
+        
+        /* Categories Section */
+        .categories {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .category-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .category-card p {
+            color: var(--gray);
+            margin-bottom: 15px;
         }
         
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background: var(--dark);
             color: white;
             padding: 60px 0 30px;
         }
@@ -455,7 +400,7 @@
         }
         
         .footer-column h3 {
-            font-size: 1.2rem;
+            font-size: 20px;
             margin-bottom: 20px;
             color: white;
         }
@@ -486,7 +431,7 @@
         
         .social-links a {
             color: white;
-            font-size: 1.2rem;
+            font-size: 20px;
         }
         
         .copyright {
@@ -494,74 +439,31 @@
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #ccc;
-            font-size: 0.9rem;
+            font-size: 14px;
         }
         
-        /* Mobile Responsiveness */
-        @media (max-width: 992px) {
-            .listicle-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
+        /* Responsive Design */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
-                text-align: center;
             }
             
             nav ul {
-                margin-top: 15px;
+                margin: 20px 0;
+                flex-wrap: wrap;
                 justify-content: center;
             }
             
             nav ul li {
-                margin: 0 10px;
-            }
-            
-            .header-icons {
-                margin-top: 15px;
-                justify-content: center;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .countdown {
-                flex-wrap: wrap;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-            }
-            
-            .newsletter-form input {
-                border-radius: 4px;
-                margin-bottom: 10px;
-            }
-            
-            .newsletter-form button {
-                border-radius: 4px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .section-title {
-                font-size: 1.8rem;
+                margin: 5px 10px;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 36px;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 18px;
             }
             
             .products-grid {
@@ -574,10 +476,10 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Nex<span>Style</span></a>
+            <a href="#" class="logo"><i class="fas fa-tshirt"></i> FashionHub</a>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="active">Home</a></li>
                     <li><a href="#">Shop</a></li>
                     <li><a href="#">Collections</a></li>
                     <li><a href="#">About</a></li>
@@ -585,9 +487,8 @@
                 </ul>
             </nav>
             <div class="header-icons">
-                <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-user"></i></a>
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i><span class="cart-count">3</span></a>
             </div>
         </div>
     </header>
@@ -595,27 +496,35 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Elevate Your Active Lifestyle</h1>
-            <p>Discover premium activewear designed for performance and style. Experience the perfect blend of comfort and functionality.</p>
-            <div class="hero-buttons">
-                <a href="#" class="btn">Shop Collection</a>
+            <h1>Discover Your Unique Style</h1>
+            <p>Explore our latest collection of trendy and fashionable clothing for every occasion</p>
+            <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px;">
+                <a href="#" class="btn">Shop Now</a>
                 <a href="#" class="btn btn-secondary">New Arrivals</a>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products">
+    <!-- Products Section -->
+    <section class="products">
         <div class="container">
-            <h2 class="section-title">Featured Products</h2>
+            <div class="section-title">
+                <h2>Featured Products</h2>
+                <p>Discover our most popular items this season</p>
+            </div>
             <div class="products-grid">
                 <!-- Product 1 -->
                 <div class="product-card">
+                    <div class="product-badge">SALE</div>
                     <div class="product-image">
-                        <img src="https://via.placeholder.com/300x300?text=Performance+Leggings" alt="Performance Leggings">
+                        <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fGNsb3RoaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80" alt="Denim Jacket">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Performance High-Waist Leggings</h3>
+                        <h3 class="product-title">Classic Denim Jacket</h3>
+                        <div class="product-price">
+                            <span class="current-price">$59.99</span>
+                            <span class="original-price">$79.99</span>
+                        </div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -624,21 +533,23 @@
                             <i class="fas fa-star-half-alt"></i>
                             <span>(128)</span>
                         </div>
-                        <div class="product-price">
-                            <span class="original">$89.99</span>
-                            $74.99
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">Details</button>
                         </div>
-                        <a href="#" class="btn btn-accent">Add to Cart</a>
                     </div>
                 </div>
                 
                 <!-- Product 2 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://via.placeholder.com/300x300?text=Sports+Bra" alt="Sports Bra">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fGNsb3RoaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80" alt="Summer Dress">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Ultimate Support Sports Bra</h3>
+                        <h3 class="product-title">Floral Summer Dress</h3>
+                        <div class="product-price">
+                            <span class="current-price">$45.99</span>
+                        </div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -647,21 +558,24 @@
                             <i class="fas fa-star"></i>
                             <span>(96)</span>
                         </div>
-                        <div class="product-price">
-                            <span class="original">$64.99</span>
-                            $54.99
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">Details</button>
                         </div>
-                        <a href="#" class="btn btn-accent">Add to Cart</a>
                     </div>
                 </div>
                 
                 <!-- Product 3 -->
                 <div class="product-card">
+                    <div class="product-badge">NEW</div>
                     <div class="product-image">
-                        <img src="https://via.placeholder.com/300x300?text=Running+Jacket" alt="Running Jacket">
+                        <img src="https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ1fHxjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Casual Blazer">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Lightweight Running Jacket</h3>
+                        <h3 class="product-title">Casual Fit Blazer</h3>
+                        <div class="product-price">
+                            <span class="current-price">$89.99</span>
+                        </div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -670,18 +584,24 @@
                             <i class="far fa-star"></i>
                             <span>(75)</span>
                         </div>
-                        <div class="product-price">$99.99</div>
-                        <a href="#" class="btn btn-accent">Add to Cart</a>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">Details</button>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 4 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://via.placeholder.com/300x300?text=Yoga+Set" alt="Yoga Set">
+                        <img src="https://images.unsplash.com/photo-1583744946564-b52d01a7b577?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODd8fGNsb3RoaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80" alt="Sports Wear">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Premium Yoga Set</h3>
+                        <h3 class="product-title">Sports Performance Set</h3>
+                        <div class="product-price">
+                            <span class="current-price">$74.99</span>
+                            <span class="original-price">$99.99</span>
+                        </div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -690,88 +610,9 @@
                             <i class="fas fa-star-half-alt"></i>
                             <span>(142)</span>
                         </div>
-                        <div class="product-price">
-                            <span class="original">$129.99</span>
-                            $109.99
-                        </div>
-                        <a href="#" class="btn btn-accent">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Promotional Section -->
-    <section class="promotional">
-        <div class="container">
-            <h2 class="section-title">Summer Sale</h2>
-            <p>Up to 40% off on selected items. Hurry, offer ends soon!</p>
-            
-            <div class="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-number">2</div>
-                    <div class="countdown-label">Days</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number">12</div>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number">45</div>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number">18</div>
-                    <div class="countdown-label">Seconds</div>
-                </div>
-            </div>
-            
-            <a href="#" class="btn btn-secondary">Shop the Sale</a>
-        </div>
-    </section>
-
-    <!-- Listicle Section -->
-    <section class="listicle">
-        <div class="container">
-            <h2 class="section-title">Top 5 Reasons to Choose NexStyle</h2>
-            <div class="listicle-container">
-                <div class="listicle-image">
-                    <img src="https://via.placeholder.com/600x500?text=Quality+Activewear" alt="Quality Activewear">
-                </div>
-                <div class="listicle-content">
-                    <div class="listicle-item">
-                        <div class="listicle-number">1</div>
-                        <div class="listicle-text">
-                            <h4>Premium Quality Materials</h4>
-                            <p>Our fabrics are specially engineered for maximum comfort, durability, and performance.</p>
-                        </div>
-                    </div>
-                    <div class="listicle-item">
-                        <div class="listicle-number">2</div>
-                        <div class="listicle-text">
-                            <h4>Sustainable Manufacturing</h4>
-                            <p>We're committed to eco-friendly production processes and sustainable material sourcing.</p>
-                        </div>
-                    </div>
-                    <div class="listicle-item">
-                        <div class="listicle-number">3</div>
-                        <div class="listicle-text">
-                            <h4>Perfect Fit Guarantee</h4>
-                            <p>Not satisfied with the fit? We offer free returns and exchanges within 30 days.</p>
-                        </div>
-                    </div>
-                    <div class="listicle-item">
-                        <div class="listicle-number">4</div>
-                        <div class="listicle-text">
-                            <h4>Designed for Performance</h4>
-                            <p>Each garment is designed with input from professional athletes and fitness experts.</p>
-                        </div>
-                    </div>
-                    <div class="listicle-item">
-                        <div class="listicle-number">5</div>
-                        <div class="listicle-text">
-                            <h4>Style That Transitions</h4>
-                            <p>From studio to street, our pieces are designed to look as good in everyday life as they do during workouts.</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">Details</button>
                         </div>
                     </div>
                 </div>
@@ -779,62 +620,50 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
+    <!-- Categories Section -->
+    <section class="categories">
         <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"These are hands down the best leggings I've ever owned. The fabric is so comfortable and they stay in place during even the most intense workouts."</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-details">
-                            <div class="author-name">Sarah Johnson</div>
-                            <div class="author-title">Professional Yoga Instructor</div>
-                        </div>
+            <div class="section-title">
+                <h2>Shop By Category</h2>
+                <p>Find the perfect style for every occasion</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
                     </div>
+                    <h3>Men's Fashion</h3>
+                    <p>Trendy and comfortable clothing for men</p>
+                    <a href="#" class="btn">Explore</a>
                 </div>
                 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"The quality is exceptional. I've had my NexStyle gear for over a year now with regular use, and it still looks brand new. Worth every penny!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-details">
-                            <div class="author-name">Michael Torres</div>
-                            <div class="author-title">Fitness Coach</div>
-                        </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-female"></i>
                     </div>
+                    <h3>Women's Fashion</h3>
+                    <p>Elegant and stylish clothing for women</p>
+                    <a href="#" class="btn">Explore</a>
                 </div>
                 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"I absolutely love the designs! Finally, activewear that is both functional and fashionable. I get compliments every time I wear NexStyle."</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-details">
-                            <div class="author-name">Jessica Williams</div>
-                            <div class="author-title">Marathon Runner</div>
-                        </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-running"></i>
                     </div>
+                    <h3>Sportswear</h3>
+                    <p>Performance clothing for your active lifestyle</p>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Accessories</h3>
+                    <p>Complete your look with our accessories</p>
+                    <a href="#" class="btn">Explore</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <h2>Join the NexStyle Community</h2>
-            <p>Subscribe to our newsletter for exclusive offers, new product alerts, and fitness tips.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
         </div>
     </section>
 
@@ -843,10 +672,21 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-column">
+                    <h3>FashionHub</h3>
+                    <p>Your one-stop destination for all fashion needs. We offer quality clothing and accessories for every style.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
                     <h3>Shop</h3>
                     <ul>
-                        <li><a href="#">Women's Collection</a></li>
                         <li><a href="#">Men's Collection</a></li>
+                        <li><a href="#">Women's Collection</a></li>
                         <li><a href="#">Accessories</a></li>
                         <li><a href="#">New Arrivals</a></li>
                         <li><a href="#">Sale</a></li>
@@ -857,102 +697,69 @@
                     <h3>Company</h3>
                     <ul>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Sustainability</a></li>
                         <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Help</h3>
+                    <h3>Contact</h3>
                     <ul>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Size Guide</a></li>
-                        <li><a href="#">Order Status</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Paris</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> info@fashionhub.com</li>
                     </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Connect With Us</h3>
-                    <p>Follow us on social media for updates, inspiration, and community highlights.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 NexStyle Activewear. All rights reserved.</p>
+                <p>&copy; 2023 FashionHub. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple countdown timer
-        function updateCountdown() {
-            const days = document.querySelector('.countdown-item:nth-child(1) .countdown-number');
-            const hours = document.querySelector('.countdown-item:nth-child(2) .countdown-number');
-            const minutes = document.querySelector('.countdown-item:nth-child(3) .countdown-number');
-            const seconds = document.querySelector('.countdown-item:nth-child(4) .countdown-number');
+        // Simple JavaScript for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartCount = document.querySelector('.cart-count');
+            let count = 3;
             
-            let sec = parseInt(seconds.innerText);
-            let min = parseInt(minutes.innerText);
-            let hr = parseInt(hours.innerText);
-            let d = parseInt(days.innerText);
-            
-            sec--;
-            
-            if (sec < 0) {
-                sec = 59;
-                min--;
-                
-                if (min < 0) {
-                    min = 59;
-                    hr--;
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    count++;
+                    cartCount.textContent = count;
                     
-                    if (hr < 0) {
-                        hr = 23;
-                        d--;
-                        
-                        if (d < 0) {
-                            d = 0;
-                            hr = 0;
-                            min = 0;
-                            sec = 0;
-                        }
-                    }
-                }
-            }
+                    const product = this.closest('.product-card');
+                    const productName = product.querySelector('.product-title').textContent;
+                    
+                    // Show added message
+                    alert(`${productName} added to cart!`);
+                    
+                    // Animation effect
+                    this.textContent = "Added!";
+                    this.style.background = "#2ecc71";
+                    
+                    setTimeout(() => {
+                        this.textContent = "Add to Cart";
+                        this.style.background = "";
+                    }, 1500);
+                });
+            });
             
-            seconds.innerText = sec.toString().padStart(2, '0');
-            minutes.innerText = min.toString().padStart(2, '0');
-            hours.innerText = hr.toString().padStart(2, '0');
-            days.innerText = d.toString().padStart(2, '0');
-        }
-        
-        setInterval(updateCountdown, 1000);
-        
-        // Add to cart animation
-        const addToCartButtons = document.querySelectorAll('.btn-accent');
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const originalText = this.innerText;
-                this.innerText = 'Added to Cart!';
-                this.style.backgroundColor = '#2ecc71';
-                
-                setTimeout(() => {
-                    this.innerText = originalText;
-                    this.style.backgroundColor = '';
-                }, 1500);
+            // View details functionality
+            const viewDetailsButtons = document.querySelectorAll('.view-details');
+            
+            viewDetailsButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const product = this.closest('.product-card');
+                    const productName = product.querySelector('.product-title').textContent;
+                    
+                    alert(`Details for ${productName} would be shown here.`);
+                });
             });
         });
     </script>
